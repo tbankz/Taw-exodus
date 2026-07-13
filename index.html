@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TAW — Monolith Canvas</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- ⬇️⬇️⬇️ ADD THIS LINE TO LOAD YOUR CSS ⬇️⬇️⬇️ -->
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  <div class="toast-capsule" id="toastSystem">Entry Committed</div>
+
+  <div class="modes-menu" id="modesMenu">
+    <button class="mode-chip active" data-mode="chain">Chain</button>
+    <button class="mode-chip" data-mode="storm">Storm</button>
+    <button class="mode-chip" data-mode="collector">Collector</button>
+    <button class="mode-chip" data-mode="alphabet">Alphabet</button>
+    <button class="mode-chip" data-mode="time attack">Time Attack</button>
+  </div>
+
+  <div class="game-over-overlay" id="gameOverOverlay">
+    <div class="game-over-card">
+      <div class="game-over-title" id="gameOverTitle">Journey Ended</div>
+      <div class="game-over-sub" id="gameOverSub">The path has closed.</div>
+      <div class="game-over-stats">
+        <div class="game-over-stat">
+          <div class="game-over-stat-label">Points</div>
+          <div class="game-over-stat-value" id="goPoints">0</div>
+        </div>
+        <div class="game-over-stat">
+          <div class="game-over-stat-label">Names</div>
+          <div class="game-over-stat-value" id="goNames">0</div>
+        </div>
+        <div class="game-over-stat">
+          <div class="game-over-stat-label">Books</div>
+          <div class="game-over-stat-value" id="goBooks">0/66</div>
+        </div>
+        <div class="game-over-stat">
+          <div class="game-over-stat-label">Streak</div>
+          <div class="game-over-stat-value" id="goStreak">0</div>
+        </div>
+      </div>
+      <button class="game-over-restart-btn" id="gameOverRestartBtn">Return to Canvas</button>
+    </div>
+  </div>
+
+  <div class="viewport-container">
+    <div class="top-spacer"></div>
+
+    <div class="focal-center-group">
+      <div class="hero-name-display" id="heroWord">Exodus</div>
+      <div class="hero-sub-display" id="heroSub">—</div>
+      
+      <div class="input-canvas-wrapper">
+        <input 
+          type="text" 
+          class="radical-input" 
+          id="canvasInput" 
+          placeholder="Type Next Name..." 
+          autocomplete="off" 
+          autocorrect="off" 
+          autocapitalize="off" 
+          spellcheck="false"
+          maxlength="30"
+        >
+        <div class="input-underline"></div>
+      </div>
+
+      <div class="requirement-indicator" id="requirementDisplay">
+        Next: <strong id="reqLetter">—</strong> · <span id="reqCount">0 remaining</span>
+      </div>
+
+      <div class="strike-row" id="strikeRow">
+        <div class="strike-dot"></div>
+        <div class="strike-dot"></div>
+        <div class="strike-dot"></div>
+      </div>
+    </div>
+
+    <footer class="horizon-deck">
+      <div class="app-branding">TAW</div>
+      
+      <div class="utility-cluster">
+        <button class="horizon-item" id="hintActionBtn">Hint</button>
+        <button class="horizon-item" id="modesToggleBtn">Modes</button>
+        <button class="horizon-item" id="skipActionBtn">Skip</button>
+        <button class="horizon-item" id="openPanelBtn">•••</button>
+      </div>
+      
+      <div class="horizon-score" id="horizonScoreDisplay">0 / 66</div>
+    </footer>
+  </div>
+
+  <div class="hidden-analytics-overlay" id="analyticsOverlay">
+    <div class="analytics-card">
+      <div class="panel-title">Session Diagnostics</div>
+      
+      <div class="stat-matrix-grid">
+        <div class="stat-node">
+          <span class="stat-node-label">Total Points</span>
+          <span class="stat-node-value" id="modalPoints">0</span>
+        </div>
+        <div class="stat-node">
+          <span class="stat-node-label">Active Streak</span>
+          <span class="stat-node-value" id="modalStreak">0</span>
+        </div>
+        <div class="stat-node">
+          <span class="stat-node-label">Skips Banked</span>
+          <span class="stat-node-value" id="modalSkips">3</span>
+        </div>
+        <div class="stat-node">
+          <span class="stat-node-label">Strikes</span>
+          <span class="stat-node-value" id="modalStrikes">0 / 3</span>
+        </div>
+      </div>
+
+      <button class="close-overlay-btn" id="closePanelBtn">Return to Canvas</button>
+    </div>
+  </div>
+
+  <!-- ⬇️⬇️⬇️ ADD THIS LINE TO LOAD YOUR JAVASCRIPT ⬇️⬇️⬇️ -->
+  <!-- MUST BE AT THE BOTTOM OF BODY, RIGHT BEFORE </body> -->
+  <script src="script.js"></script>
+
+</body>
+</html>
