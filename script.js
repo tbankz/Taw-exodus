@@ -626,7 +626,8 @@ let FALLBACK_NAMES = {
   "zoreah": ["Joshua"],
   "zur": ["Numbers", "1 Chronicles"],
   "zuriel": ["Numbers"],
-  "zushim": ["Genesis"]
+  "zushim": ["Genesis"],
+  "zuzim" : ["Genesis"]
 };
 
       // Extend with places
